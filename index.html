@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Management Dashboard</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plusplusjakartasans@1.0.1/plusjakartasans.min.css">
+<link rel="shortcut icon" href="/assets/image/favicon-32x32.png" type="image/x-icon">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<div class="main-container ">
+    <!-- Sidebar Toggle Button -->
+    
+     
+    <!-- Sidebar -->
+    <div class="sidebar card m-4" id="sidebar">
+        <div class="org-logo d-flex justify-content-between">
+            <div class="d-flex align-items-center">
+                <div class="logo-circle">
+                    <img src="/assets/image/logosme.png" class=" rounded-circle" alt="Logo" width="50" height="50">
+                </div>
+                <div class="org-name">
+                    <div class="fw-bold">DTI</div>
+                    <div class="small text-muted">DGAS</div>
+                </div>
+            </div>
+            <div class="li-li text-primary">
+                <i class="fas fa-chevron-down "></i>
+            </div>
+        </div>
+        
+        <a href="/index.html" class="nav-item active btn-bg">
+            <i class="fas fa-th-large"></i>
+            <span class="nav-text">Dashboard</span>
+        </a>
+        
+        <a href="/projects.html" class="nav-item">
+            <i class="far fa-folder"></i>
+            <span class="nav-text">Projectos</span>
+        </a>
+        
+        <a href="/tasks.html" class="nav-item">
+            <i class="far fa-check-square"></i>
+            <span class="nav-text">Minhas tarefas</span>
+        </a>
+        
+        <a href="/chat.html" class="nav-item">
+            <i class="far fa-comment-dots"></i>
+            <span class="nav-text">Comunicados</span>
+        </a>
+        
+        <a href="/settings.html" class="nav-item">
+            <i class="fas fa-chart-line"></i>
+            <span class="nav-text">Relatórios</span>
+        </a>
+        
+        <div class="spacer"></div>
+        
+        <div class="d-flex justify-content-between align-items-center mt-3 mb-3">
+            <div class="dark-mode-text">Dark Mode</div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="darkModeSwitch">
+            </div>
+        </div>
+        
+        <a href="#" class="nav-item">
+            <i class="far fa-user"></i>
+            <span class="nav-text">Perfil</span>
+        </a>
+        
+        <a href="#" class="nav-item org-logout text-white">
+            <i class="fas fa-sign-out-alt "></i>
+            <span class="nav-text">Logout</span>
+        </a>
+    </div>
+    
+    
+    <!-- Main Content -->
+    <div class="content-area">
+        <div class="container-fluid container-card card p-4">
+            <!-- Header --> 
+            <div class="row mb-4 align-items-center">
+                <div class="col-2 ">
+                    <button class="toggle-sidebar btn-primary" id="toggleSidebar">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+                <div class="col-md-6 d-flex justify-content-center ">
+                    <div class="search-box  w-100">
+                        <i class="fas fa-search text-muted"></i>
+                        <input type="text" placeholder="Procurar por...">
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex justify-content-end gap-3">
+                    <div class="me-3 p-3 text-warning">
+                        <i class="far fa-bell fs-5"></i>
+                    </div>
+                    <div class="d-flex align-items-center gap-2 cursor-pointer" data-bs-toggle="dropdown">
+                        <img src="../assets/image/profile/avatar.png" class="rounded-circle me-2" style="width: 40px; height: 40px;" alt="Profile">
+
+
+                        <div>
+                            <div class="fw-bold">Austin Edmar</div>
+                            <div class="small text-primary">austin@gmail.com</div>
+                        </div>
+                        <div class="dropdown cursor-pointer">
+                            <i class="fas fa-chevron-down ms-2 text-primary " ></i>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Perfil</a></li>
+                                <li><a class="dropdown-item" href="#">Configurações</a></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Statistics and Tasks Section -->
+            <div class="row mb-4">
+                <div class="col-lg-8">
+                    <div class="stats-header">
+                        <h5>Estatísticas de Tarefas</h5>
+                        <div class="d-flex">
+                            <div class="dropdown me-2">
+                                <button class="btn dropdown-toggle cursor-pointer" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Tarefas Completadas 
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Tarefas Completadas</a></li>
+                                    <li><a class="dropdown-item" href="#">Tarefas Pendentes</a></li>
+                                    <li><a class="dropdown-item" href="#">Tarefas Atrasadas</a></li>
+                                  </ul>
+                            </div>
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle cursor-pointer" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Semana 
+                                </button>   
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Semana 1</a></li>
+                                    <li><a class="dropdown-item" href="#">Semana 2</a></li>
+                                    <li><a class="dropdown-item" href="#">Semana 3</a></li>
+                                  </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-container shadow rounded p-4">
+                        <canvas id="chart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <!-- Tasks Summary -->
+                    <div class="mb-4">
+                        <h5 class="mb-3">Tarefas</h5>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3 ">
+                                <div class="task-badge">
+                                    <i class="far fa-calendar-alt text-primary"></i>
+                                    <div>Tarefas Pendentes</div>
+                                    <div class="fw-bold">10/34 Tarefas</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="task-badge" style="background-color: rgba(255, 250, 200, 0.3);">
+                                    <i class="far fa-clock text-warning"></i>
+                                    <div>Tarefas Atrasadas</div>
+                                    <div class="fw-bold">10/34 Tarefas</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="task-badge">
+                                    <i class="far fa-calendar-check text-primary"></i>
+                                    <div>Tarefas Concluídas</div>
+                                    <div class="fw-bold">10/34 Tarefas</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="task-badge" style="background-color: rgba(200, 255, 210, 0.3);">
+                                    <i class="far fa-comments text-success"></i>
+                                    <div>Comentários</div>
+                                    <div class="fw-bold">10/34 Tarefas</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Projects Section -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h5>Tarefas</h5>
+                        <div>
+                           
+                            <a href="#" class="ms-3 text-primary">Ver todas</a>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <!-- Project Card 1 -->
+                        <div class="col-md-4">
+                            <div class="card project-card shadow">
+                                <div class="project-image project-bg-1">
+                                    <div class="priority-badge">Alta</div>
+                                </div>
+                                <div class="card-body">
+                                    <h6>Sistema de RH</h6>
+                                    <div class="small text-muted mb-3">Austin Edmar - Janeiro, 2025</div>
+                                    
+                                    <div class="progress project-progress">
+                                        <div class="progress-bar bg-warning" style="width: 49%"></div>
+                                    </div>
+                                    
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <span class="fw-bold">15</span> / <span class="text-muted">48</span> Total Tarefas
+                                        </div>
+                                        <div class="fw-bold">49%</div>
+                                    </div>
+                                    
+                                    <div class="user-avatars mt-3">
+                                        <div class="user-avatar">A</div>
+                                        <div class="user-avatar">B</div>
+                                        <div class="user-avatar">C</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Project Card 2 -->
+                        <div class="col-md-4">
+                            <div class="card project-card shadow">
+                                <div class="project-image project-bg-2">
+                                    <div class="priority-badge">Alta</div>
+                                </div>
+                                <div class="card-body">
+                                    <h6>Sistema de CRM</h6>
+                                    <div class="small text-muted mb-3">Austin Edmar - Janeiro, 2025</div>
+                                    
+                                    <div class="progress project-progress">
+                                        <div class="progress-bar bg-warning" style="width: 49%"></div>
+                                    </div>
+                                    
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <span class="fw-bold">15</span> / <span class="text-muted">48</span> Total Tarefas
+                                        </div>
+                                        <div class="fw-bold">49%</div>
+                                    </div>
+                                    
+                                    <div class="user-avatars mt-3">
+                                        <div class="user-avatar">A</div>
+                                        <div class="user-avatar">B</div>
+                                        <div class="user-avatar">C</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Project Card 3 -->
+                        <div class="col-md-4">
+                            <div class="card project-card shadow">
+                                <div class="project-image project-bg-3">
+                                    <div class="priority-badge">urgente</div>
+                                </div>
+                                <div class="card-body">
+                                    <h6>Dashboard Alteração do layou</h6>
+                                    <div class="small text-muted mb-3">Austin Edmar - Janeiro, 2025</div>
+                                    
+                                    <div class="progress project-progress">
+                                        <div class="progress-bar bg-warning" style="width: 49%"></div>
+                                    </div>
+                                    
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <span class="fw-bold">15</span> / <span class="text-muted">48</span> Total Tarefas
+                                        </div>
+                                        <div class="fw-bold">49%</div>
+                                    </div>
+                                    
+                                    <div class="user-avatars mt-3">
+                                        <div class="user-avatar">A</div>
+                                        <div class="user-avatar">B</div>
+                                        <div class="user-avatar">C</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Today's Tasks and Info Sections -->
+            <div class="row">
+                <div class="col-lg-7">
+                    <!-- Today's Tasks -->
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="mb-3">Projectos em andamento</h5>
+                            <a href="#" class="ms-3 text-primary">Ver todos</a>
+                        </div>
+                       
+                        
+                        <div class="card task-card shadow">
+                            <div class="card-body">
+                                <div class="small text-muted">Sistema de DSI</div>
+                                <h6 class="mb-3">Implementando relatórios</h6>
+                                
+                                <div class="d-flex justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <div class="me-4">
+                                            <i class="far fa-comment-alt me-1"></i>
+                                            4 Comentários
+                                        </div>
+                                        <div class="me-4">
+                                            <i class="fas fa-paperclip me-1"></i>
+                                            2 Anexos
+                                        </div>
+                                        <div>
+                                            <i class="far fa-clock me-1"></i>
+                                            16 Horas restantes
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="task-users">
+                                        <div class="user-avatars">
+                                            <div class="user-avatar">A</div>
+                                            <div class="user-avatar">B</div>
+                                            <div class="user-avatar">C</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card task-card shadow">
+                            <div class="card-body">
+                                <div class="small text-muted">Sistema de RH</div>
+                                <h6 class="mb-3">Design da interface do usuário</h6>
+                                
+                                <div class="d-flex justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <div class="me-4">
+                                            <i class="far fa-comment-alt me-1"></i>
+                                            2 Comentários
+                                        </div>
+                                        <div class="me-4">
+                                            <i class="fas fa-paperclip me-1"></i>
+                                            5 Anexos
+                                        </div>
+                                        <div>
+                                            <i class="far fa-clock me-1"></i>
+                                            8 Horas restantes
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="task-users">
+                                        <div class="user-avatars">
+                                            <div class="user-avatar">D</div>
+                                            <div class="user-avatar">E</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-5  p-4 ">
+                    <!-- Users -->
+                  <!--   <div class="mb-4 shadow p-4 rounded">
+                        <h5 class="mb-3">Usuários logados</h5>
+                        
+                        <div class="d-flex justify-content-between">
+                            <div class="text-center">
+                                <img src="/assets/image/profile/avatar.png" class="rounded-circle" style="width: 40px; height: 40px;" alt="User">
+                                <div>Hestia</div>
+                            </div>
+                            <div class="text-center">
+                                <img src="/assets/image/profile/avatar.png" class="rounded-circle" style="width: 40px; height: 40px;" alt="User">
+                                <div>Marine</div>
+                            </div>
+                            <div class="text-center">
+                                <img src="/assets/image/profile/avatar.png" class="rounded-circle" style="width: 40px; height: 40px;" alt="User">
+                                <div>Patricia</div>
+                            </div>
+                            <div class="text-center">
+                                <img src="/assets/image/profile/avatar.png" class="rounded-circle" style="width: 40px; height: 40px;" alt="User">
+                                <div>Jeremy</div>
+                            </div>
+                            <div class="text-center">
+                                <img src="/assets/image/profile/avatar.png" class="rounded-circle" style="width: 40px; height: 40px;" alt="User">
+                                <div>Kiara</div>
+                            </div>
+                        </div>
+                    </div> -->
+                    
+                    <!-- Activities -->
+                    <div class="mb-4 shadow p-4 rounded">
+                        <h5 class="mb-3">Atividades</h5>
+                        
+                        <div class="activity-list">
+                            <!-- Activity 1 -->
+                            <div class="activity-item">
+                                <div class="activity-avatar">
+                                    <img src="/assets/image/profile/avatar.png" class="rounded-circle" style="width: 40px; height: 40px;" alt="User">
+                                </div>
+                                <div class="activity-content">
+                                    <div>Convite para entrar no projecto</div>
+                                    <div class="small text-muted">Luisa Maria convidada ao projecto <span class="text-danger">RH</span></div>
+                                    <div class="small text-muted">13 de Janeiro de 2025, 14h00</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Activity 2 -->
+                            <div class="activity-item">
+                                <div class="activity-avatar">
+                                    <img src="/assets/image/profile/avatar.png" class="rounded-circle" style="width: 40px; height: 40px;" alt="User">
+                                </div>
+                                <div class="activity-content">
+                                    <div>Nova tarefa criada</div>
+                                    <div class="small text-muted">Carlos Silva criou uma nova tarefa no projeto <span class="text-primary">CRM</span></div>
+                                    <div class="small text-muted">14 de Janeiro de 2025, 09h30</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Activity 3 -->
+                            <div class="activity-item">
+                                <div class="activity-avatar">
+                                    <img src="/assets/image/profile/avatar.png" class="rounded-circle" style="width: 40px; height: 40px;"  alt="User">
+                                </div>
+                                <div class="activity-content">
+                                    <div>Tarefa concluída</div>
+                                    <div class="small text-muted">Pedro Santos concluiu a tarefa <span class="text-success">Implementar login</span></div>
+                                    <div class="small text-muted">15 de Janeiro de 2025, 16h45</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/scripts.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+
+</body>
+</html>
