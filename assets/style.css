@@ -258,7 +258,19 @@ z-index: 2; /* conteúdo acima do ::before */
 
 .project-image {
     height: 120px;
-    background: linear-gradient(135deg, #6200ea, #03dac6);
+    background-image: url('/assets/image/projec.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    padding: 0 15px 0 5px;
+    justify-content: space-between;
+}
+.project-image-tasks {
+    height: 120px;
+    background-image: url('/assets/image/tarefas.png');
+    background-size: cover;
+    background-position: center;
     position: relative;
     display: flex;
     padding: 0 15px 0 5px;
@@ -384,9 +396,7 @@ z-index: 2; /* conteúdo acima do ::before */
 
 
 /* Project cards background gradients */
-.project-bg-1 {
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-}
+
 
 /* .project-bg-2 {
     background: linear-gradient(135deg, #ff0084, #33001b);
