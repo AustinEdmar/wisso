@@ -434,6 +434,38 @@ z-index: 2; /* conteúdo acima do ::before */
     background-image: linear-gradient(to right top, #0285fe, #00a0ff, #00b7ff, #00ccff, #45dff9);
 }
 
+.table-bg {
+    background-image: linear-gradient(to right top, #0285fe, #00a0ff, #00b7ff, #00ccff, #45dff9);
+    color: white;
+    border-radius: 12px;
+    border: none;
+    padding: 20px; 
+    
+}
+
+.taskStatus-open {
+    border-radius: 12px;
+    padding: 5px 10px;
+    background-color: #a9f0b6;
+    color: green;
+    
+}
+
+.taskStatus-close {
+    border-radius: 12px;
+    padding: 5px 10px;
+    background-color: #f0a9b6;
+    color: red;
+    
+}
+
+.col-acoes {
+    padding: 15px;  /* menos espaço interno */
+    width: 80px;       /* ou ajuste conforme necessário */
+    text-align: center;
+  }
+
+
 .btn-primary {
     background-image: linear-gradient(to right top, #0239fe, #0051ff, #0065ff, #0076ff, #0285fe);
 }

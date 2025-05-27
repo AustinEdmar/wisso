@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Management Dashboard</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plusplusjakartasans@1.0.1/plusjakartasans.min.css">
+<link rel="shortcut icon" href="/assets/image/favicon-32x32.png" type="image/x-icon">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<div class="main-container ">
+    <!-- Sidebar Toggle Button -->
+    
+     
+    <!-- Sidebar -->
+    <div class="sidebar card m-4" id="sidebar">
+        <div class="org-logo d-flex justify-content-between">
+            <div class="d-flex align-items-center">
+                <div class="logo-circle">
+                    <img src="/assets/image/logosme.png" class=" rounded-circle" alt="Logo" width="50" height="50">
+                </div>
+                <div class="org-name">
+                    <div class="fw-bold">DTI</div>
+                    <div class="small text-muted">DGAS</div>
+                </div>
+            </div>
+            <div class="li-li text-primary">
+                <i class="fas fa-chevron-down "></i>
+            </div>
+        </div>
+        
+        <a href="/index.html" class="nav-item ">
+            <i class="fas fa-th-large"></i>
+            <span class="nav-text">Dashboard</span>
+        </a>
+        
+        <a href="/projects.html" class="nav-item ">
+            <i class="far fa-folder"></i>
+            <span class="nav-text">Projectos</span>
+        </a>
+        
+        <a href="/tasks.html" class="nav-item ">
+            <i class="far fa-check-square"></i>
+            <span class="nav-text">Minhas Tarefas</span>
+        </a>
+        
+        <a href="/chat.html" class="nav-item active btn-bg">
+            <i class="far fa-comment-dots"></i>
+            <span class="nav-text">Comunicados</span>
+        </a>
+        
+        <a href="/settings.html" class="nav-item">
+            <i class="fas fa-chart-line"></i>
+            <span class="nav-text">Relatórios</span>
+        </a>
+        
+        <div class="spacer"></div>
+        
+        <div class="d-flex justify-content-between align-items-center mt-3 mb-3">
+            <div class="dark-mode-text">Dark Mode</div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="darkModeSwitch">
+            </div>
+        </div>
+        
+        <a href="#" class="nav-item">
+            <i class="far fa-user"></i>
+            <span class="nav-text">Perfil</span>
+        </a>
+        
+        <a href="#" class="nav-item org-logout text-white">
+            <i class="fas fa-sign-out-alt "></i>
+            <span class="nav-text">Logout</span>
+        </a>
+    </div>
+    
+    
+    <!-- Main Content -->
+    <div class="content-area ">
+        <div class="container-fluid container-card card p-4 ">
+            <!-- Header --> 
+            <div class="row mb-4 align-items-center">
+                <div class="col-2 ">
+                    <button class="toggle-sidebar btn-primary" id="toggleSidebar">
+                        <i class="fas fa-bars"></i> 
+                    </button>
+
+                    
+                </div>
+                
+                <div class="col-md-6 d-flex justify-content-center ">
+                    <div class="search-box  w-100">
+                        <i class="fas fa-search text-muted"></i>
+                        <input type="text" placeholder="Procurar por...">
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex justify-content-end gap-3">
+                    <div class="me-3 p-3 text-warning">
+                        <i class="far fa-bell fs-5"></i>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <img src="../assets/image/profile/avatar.png" class="rounded-circle me-2" style="width: 40px; height: 40px;" alt="Profile">
+
+
+                        <div>
+                            <div class="fw-bold">Austin Edmar</div>
+                            <div class="small text-primary">austin@gmail.com</div>
+                        </div>
+                        <i class="fas fa-chevron-down ms-2 text-primary"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Statistics and Tasks Section -->
+            <div class="row">
+                
+                    <div class="stats-header d-flex justify-content-between mt-3">
+                        <h5 class="text-muted">Comunicados</h5>
+                       
+
+                        <div>
+                            <!-- offcanvas -->
+                            <button class="btn btn-create "  data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightCreate" aria-controls="offcanvasWithBothOptions">
+                                <i class="fas fa-plus me-2"></i> Criar comunicado
+                            </button>
+                          
+                        </div>
+                        
+                    </div>
+                    
+                   
+                
+                
+               <div class="content-area">
+                  <!-- Projects Section -->
+            <div class="row ">
+                <div class="col-12">
+                    
+                    
+                    <div class="row">
+                          
+                        <!-- Project Card 3 -->
+                       <!--  <div class="col-md-4">
+                            <div class="card project-card shadow">
+                                <div class="project-image project-bg-1">
+                                    <div class="priority-badge">Alta</div>
+                                    
+                                    <button class="btn text-white h-50" type="button" dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        
+                                        <li><button class="dropdown-item" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightDetail" aria-controls="offcanvasWithBothOptions">
+                                            <i class="fas fa-info me-3 text-success"></i>
+                                            Detalhes</button></li>
+                                        <li><button class="dropdown-item" href="#">
+                                            <i class="fas fa-download me-3 text-warning"></i>
+                                            Download</button></li>
+                                        <li><button class="dropdown-item " data-bs-toggle="modal" data-bs-target="#exampleModal-folha ">
+                                            <i class="fas fa-file me-3 text-danger"></i>
+                                            Folha de Obra</button></li>
+                                        <li><button class="dropdown-item " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            <i class="fas fa-exchange me-3 text-primary"></i>
+                                            Mudar Estado </button></li>
+                                        <li><button class="dropdown-item " href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightEdit" aria-controls="offcanvasWithBothOptions">
+                                            <i class="fas fa-edit me-3 text-success"></i>
+                                            Editar 
+                                        </button></li>
+                                      </ul>
+                                </div>
+                                    <div class="card-body">
+                                    <h6>Sistema de RH</h6>
+                                    <div class="small text-muted mb-3">Austin Edmar - Janeiro, 2025</div>
+                                    
+                                    <div class="progress project-progress">
+                                        <div class="progress-bar bg-warning" style="width: 49%"></div>
+                                    </div>
+                                    
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <span class="fw-bold">15</span> / <span class="text-muted">48</span> Total Progresso
+                                        </div>
+                                        <div class="fw-bold">49%</div>
+                                    </div>
+                                    
+                                    <div class="user-avatars mt-3">
+                                        <div class="user-avatar">A</div>
+                                        <div class="user-avatar">B</div>
+                                        <div class="user-avatar">C</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                   
+                        <table class="table">
+                            <thead class=" table-bg">
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Titulo</th>
+                                <th scope="col">Data</th>
+                                <th scope="col">Estado</th>
+                                <th scope="col col-acoes">Ações</th>
+                              </tr>
+                            </thead>
+                            <tbody class="text-secondary">
+                              <tr>
+                                <th scope="row">1</th>
+                                <td>Comunicado 1</td>
+                                <td>2025-01-01</td>
+                                <td><span class="taskStatus-open">Aberto</span></td>
+                                <td class="col-acoes">
+                                    <button class="btn btn-primary h-50" type="button" dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        
+                                        <li><button class="dropdown-item" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightDetail" aria-controls="offcanvasWithBothOptions">
+                                            <i class="fas fa-info me-3 text-success"></i>
+                                            Detalhes</button></li>
+                                        <li><button class="dropdown-item" href="#">
+                                            <i class="fas fa-download me-3 text-warning"></i>
+                                            Download</button></li>
+                                        <li><button class="dropdown-item " data-bs-toggle="modal" data-bs-target="#exampleModal-folha ">
+                                            <i class="fas fa-file me-3 text-danger"></i>
+                                            Folha de Obra</button></li>
+                                        <li><button class="dropdown-item " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            <i class="fas fa-exchange me-3 text-primary"></i>
+                                            Mudar Estado </button></li>
+                                        <li><button class="dropdown-item " href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightEdit" aria-controls="offcanvasWithBothOptions">
+                                            <i class="fas fa-edit me-3 text-success"></i>
+                                            Editar 
+                                        </button></li>
+                                      </ul>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th scope="row">2</th>
+                                <td>Comunicado 2</td>
+                                <td>2025-01-02</td>
+                                <td><span class="taskStatus-close">Fechado</span></td>
+                                <td class="col-acoes">
+                                    <button class="btn btn-primary h-50" type="button" dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        
+                                        <li><button class="dropdown-item" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightDetail" aria-controls="offcanvasWithBothOptions">
+                                            <i class="fas fa-info me-3 text-success"></i>
+                                            Detalhes</button></li>
+                                        <li><button class="dropdown-item" href="#">
+                                            <i class="fas fa-download me-3 text-warning"></i>
+                                            Download</button></li>
+                                        <li><button class="dropdown-item " data-bs-toggle="modal" data-bs-target="#exampleModal-folha ">
+                                            <i class="fas fa-file me-3 text-danger"></i>
+                                            Folha de Obra</button></li>
+                                        <li><button class="dropdown-item " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            <i class="fas fa-exchange me-3 text-primary"></i>
+                                            Mudar Estado </button></li>
+                                        <li><button class="dropdown-item " href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightEdit" aria-controls="offcanvasWithBothOptions">
+                                            <i class="fas fa-edit me-3 text-success"></i>
+                                            Editar 
+                                        </button></li>
+                                      </ul>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th scope="row">3</th>
+                                <td>Comunicado 3</td>
+                                <td>2025-01-03</td>
+                                <td><span class="taskStatus-close">Fechado</span></td>
+                                <td class="col-acoes">
+                                    <button class="btn btn-primary h-50" type="button" dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        
+                                        <li><button class="dropdown-item" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightDetail" aria-controls="offcanvasWithBothOptions">
+                                            <i class="fas fa-info me-3 text-success"></i>
+                                            Detalhes</button></li>
+                                        <li><button class="dropdown-item" href="#">
+                                            <i class="fas fa-download me-3 text-warning"></i>
+                                            Download</button></li>
+                                        <li><button class="dropdown-item " data-bs-toggle="modal" data-bs-target="#exampleModal-folha ">
+                                            <i class="fas fa-file me-3 text-danger"></i>
+                                            Folha de Obra</button></li>
+                                        <li><button class="dropdown-item " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            <i class="fas fa-exchange me-3 text-primary"></i>
+                                            Mudar Estado </button></li>
+                                        <li><button class="dropdown-item " href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightEdit" aria-controls="offcanvasWithBothOptions">
+                                            <i class="fas fa-edit me-3 text-success"></i>
+                                            Editar 
+                                        </button></li>
+                                      </ul>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                    </div>
+                </div>
+            </div>
+               </div>
+               
+            </div>
+           
+        </div>
+    </div>
+
+    
+                <!-- offcanvas do criar -->
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightCreate" aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                      <h5 id="offcanvasRightLabel">Criar novo comunicado</h5>
+                      <button type="button" class="btn-bg-close rounded-circle " data-bs-dismiss="offcanvas" aria-label="Close">
+                        <i class="fas fa-times"></i>
+                      </button>
+                    </div>
+                    <div class="offcanvas-body">
+                      <form>
+                        <div class="mb-4">
+                            <label for="taskName" class="form-label fw-medium text-dark mb-2">Titulo do comunicado</label>
+                            <input type="text" class="form-control bg-light border-0 py-3" id="taskName" value="Sistema de RH" required>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="taskDescription" class="form-label fw-medium text-dark mb-2">Descrição</label>
+                            <textarea class="form-control bg-light border-0 py-3" id="taskDescription" rows="3">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</textarea>
+                        </div>
+                        <div class="mb-4">
+                          <label for="taskFile" class="form-label fw-medium text-dark mb-2">Arquivo</label>
+                          <input type="file" class="form-control bg-light border-0 py-3" id="taskFile" placeholder="Selecione o arquivo">
+                        </div>
+
+                        <div class="mb-4">
+                          <label for="taskPriority" class="form-label fw-medium text-dark mb-2">Prioridade</label>
+                          <select class="form-select bg-light border-0 py-3" id="taskPriority">
+                            <option selected>Selecione a prioridade</option>
+                            <option>Alta</option>
+                            <option>Normal</option>
+                            <option>Baixa</option>
+                          </select>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-4">
+                                    <label for="taskStartDate" class="form-label fw-medium text-dark mb-2">Data de início</label>
+                                    <input type="date" class="form-control bg-light border-0 py-3" id="taskStartDate" required>
+                                </div> 
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-4">
+                                    <label for="taskDueDate" class="form-label fw-medium text-dark mb-2">Data final</label>
+                                    <input type="date" class="form-control bg-light border-0 py-3" id="taskDueDate" required>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label for="taskAssignees" class="form-label fw-medium text-dark mb-2">Alocar para</label>
+                            <select class="form-select bg-light border-0 py-3" id="taskAssignees" multiple>
+                              <option value="">Selecione os usuários</option>
+                              <option value="user1">Usuário 1</option>
+                              <option value="user2">Usuário 2</option>
+                              <option value="user3">Usuário 3</option>
+                            </select>
+                          </div>
+                        <div class="mb-4">
+                            <label for="taskAssignees" class="form-label fw-medium text-dark mb-2">Direção</label>
+                            <select class="form-select bg-light border-0 py-3" id="taskAssignees" multiple>
+                              <option value="">Selecione a direção</option>
+                              <option value="user1">Direção 1</option>
+                              <option value="user2">Direção 2</option>
+                              <option value="user3">Direção 3</option>
+                            </select>
+                          </div>
+                        <div class="mb-4">
+                            <label for="taskAssignees" class="form-label fw-medium text-dark mb-2">Departamento</label>
+                            <select class="form-select bg-light -0 py-3 border" id="taskAssignees" multiple>
+                              <option value="">Selecione o departamento</option>
+                              <option value="user1">Departamento 1</option>
+                              <option value="user2">Departamento 2</option>
+                              <option value="user3">Departamento 3</option>
+                              <option value="user3">Departamento 3</option>
+                              <option value="user3">Departamento 3</option>
+                              <option value="user3">Departamento 3</option>
+                            </select>
+                          </div>
+                        </div>
+                       <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-create w-100  py-2 m-4">Criar Tarefa</button>
+                       </div>
+                      </form>
+                    </div>
+             <!-- offcanvas do editar -->
+             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightEdit" aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header">
+                  <h5 id="offcanvasRightLabel">Editar o Comunicado</h5>
+                  <button type="button" class="btn-bg-close rounded-circle " data-bs-dismiss="offcanvas" aria-label="Close">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+                <div class="offcanvas-body">
+                  <form>
+                    <div class="mb-4">
+                        <label for="taskName" class="form-label fw-medium text-dark mb-2">Titulo do comunicado</label>
+                        <input type="text" class="form-control bg-light border-0 py-3" id="taskName" value="Sistema de RH" required>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="taskDescription" class="form-label fw-medium text-dark mb-2">Descrição</label>
+                        <textarea class="form-control bg-light border-0 py-3" id="taskDescription" rows="3">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</textarea>
+                    </div>
+                    <div class="mb-4">
+                      <label for="taskFile" class="form-label fw-medium text-dark mb-2">Arquivo</label>
+                      <input type="file" class="form-control bg-light border-0 py-3" id="taskFile" placeholder="Selecione o arquivo">
+                    </div>
+
+                    <div class="mb-4">
+                      <label for="taskPriority" class="form-label fw-medium text-dark mb-2">Prioridade</label>
+                      <select class="form-select bg-light border-0 py-3" id="taskPriority">
+                        <option selected>Selecione a prioridade</option>
+                        <option>Alta</option>
+                        <option>Normal</option>
+                        <option>Baixa</option>
+                      </select>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-4">
+                                <label for="taskStartDate" class="form-label fw-medium text-dark mb-2">Data de início</label>
+                                <input type="date" class="form-control bg-light border-0 py-3" id="taskStartDate" required>
+                            </div> 
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-4">
+                                <label for="taskDueDate" class="form-label fw-medium text-dark mb-2">Data final</label>
+                                <input type="date" class="form-control bg-light border-0 py-3" id="taskDueDate" required>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="taskAssignees" class="form-label fw-medium text-dark mb-2">Alocar para</label>
+                        <select class="form-select bg-light border-0 py-3" id="taskAssignees" multiple>
+                          <option value="">Selecione os usuários</option>
+                          <option value="user1">Usuário 1</option>
+                          <option value="user2">Usuário 2</option>
+                          <option value="user3">Usuário 3</option>
+                        </select>
+                      </div>
+                    <div class="mb-4">
+                        <label for="taskAssignees" class="form-label fw-medium text-dark mb-2">Direção</label>
+                        <select class="form-select bg-light border-0 py-3" id="taskAssignees" multiple>
+                          <option value="">Selecione a direção</option>
+                          <option value="user1">Direção 1</option>
+                          <option value="user2">Direção 2</option>
+                          <option value="user3">Direção 3</option>
+                        </select>
+                      </div>
+                    <div class="mb-4">
+                        <label for="taskAssignees" class="form-label fw-medium text-dark mb-2">Departamento</label>
+                        <select class="form-select bg-light -0 py-3 border" id="taskAssignees" multiple>
+                          <option value="">Selecione o departamento</option>
+                          <option value="user1">Departamento 1</option>
+                          <option value="user2">Departamento 2</option>
+                          <option value="user3">Departamento 3</option>
+                          <option value="user3">Departamento 3</option>
+                          <option value="user3">Departamento 3</option>
+                          <option value="user3">Departamento 3</option>
+                        </select>
+                      </div>
+                    </div>
+                   <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-create w-100  py-2 m-4">Editar Tarefa</button>
+                   </div>
+                  </form>
+                </div>
+                <!-- offcanvas do detalhes -->
+             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightDetail" aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header">
+                  <h5 id="offcanvasRightLabel">Detalhes do tarefa</h5>
+                  <button type="button" class="btn-bg-close rounded-circle " data-bs-dismiss="offcanvas" aria-label="Close">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+                <div class="offcanvas-body">
+                  <form>
+                    <div class="mb-4">
+                        <label for="projectName" class="form-label fw-medium text-dark mb-2">Nome do tarefa</label>
+                        <input type="text" class="form-control bg-light border-0 py-3" id="projectName" value="Sistema de RH" required>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="projectDescription" class="form-label fw-medium text-dark mb-2">Descrição</label>
+                        <textarea class="form-control bg-light border-0 py-3" id="projectDescription" rows="3">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</textarea>
+                    </div>
+                    <div class="mb-4">
+                      <label for="taskFile" class="form-label fw-medium text-dark mb-2">Arquivo</label>
+                      <input type="file" class="form-control bg-light border-0 py-3" id="taskFile" placeholder="Selecione o arquivo">
+                    </div>
+
+                    <div class="mb-4">
+                      <label for="taskPriority" class="form-label fw-medium text-dark mb-2">Prioridade</label>
+                      <select class="form-select bg-light border-0 py-3" id="taskPriority">
+                        <option selected>Selecione a prioridade</option>
+                        <option>Alta</option>
+                        <option>Normal</option>
+                        <option>Baixa</option>
+                      </select>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-4">
+                                <label for="taskStartDate" class="form-label fw-medium text-dark mb-2">Data de início</label>
+                                <input type="date" class="form-control bg-light border-0 py-3" id="taskStartDate" required>
+                            </div> 
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-4">
+                                <label for="taskDueDate" class="form-label fw-medium text-dark mb-2">Data final</label>
+                                <input type="date" class="form-control bg-light border-0 py-3" id="taskDueDate" required>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="taskAssignees" class="form-label fw-medium text-dark mb-2">Alocar para</label>
+                        <select class="form-select bg-light border-0 py-3" id="taskAssignees" multiple>
+                          <option value="">Selecione os usuários</option>
+                          <option value="user1">Usuário 1</option>
+                          <option value="user2">Usuário 2</option>
+                          <option value="user3">Usuário 3</option>
+                        </select>
+                      </div>
+                    <div class="mb-4">
+                        <label for="taskAssignees" class="form-label fw-medium text-dark mb-2">Direção</label>
+                        <select class="form-select bg-light border-0 py-3" id="taskAssignees" multiple>
+                          <option value="">Selecione a direção</option>
+                          <option value="user1">Direção 1</option>
+                          <option value="user2">Direção 2</option>
+                          <option value="user3">Direção 3</option>
+                        </select>
+                      </div>
+                    <div class="mb-4">
+                        <label for="taskAssignees" class="form-label fw-medium text-dark mb-2">Departamento</label>
+                        <select class="form-select bg-light -0 py-3 border" id="taskAssignees" multiple>
+                          <option value="">Selecione o departamento</option>
+                          <option value="user1">Departamento 1</option>
+                          <option value="user2">Departamento 2</option>
+                          <option value="user3">Departamento 3</option>
+                          <option value="user3">Departamento 3</option>
+                          <option value="user3">Departamento 3</option>
+                          <option value="user3">Departamento 3</option>
+                        </select>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+
+        <!-- Modal mudar estado -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Mudar Estado</h5>
+          <button type="button" class="btn-bg-close rounded-circle" data-bs-dismiss="modal" aria-label="Close">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="taskStatus" class="form-label fw-medium text-dark mb-2">Estado</label>
+              <select class="form-select bg-light border-0 py-3" id="taskStatus">
+                <option selected>Selecione o estado</option>
+                <option>25%</option>
+                <option>50%</option>
+                <option>75%</option>
+                <option>100%</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+         
+          <button type="button" class="btn btn-primary w-100">Mudar Estado</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal folha de obra -->
+  <div class="modal fade" id="exampleModal-folha" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header btn-bg text-white">
+          <h5 class="modal-title" id="exampleModalLabel">Folha de obra</h5>
+          <button type="button" class="btn-bg-close text-white" data-bs-dismiss="modal" aria-label="Fechar">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="taskStatus" class="form-label fw-medium text-dark mb-2">Numero</label>
+                        <input type="text" class="form-control bg-light border-0 py-3" id="taskStatus">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="taskStatus" class="form-label fw-medium text-dark mb-2"> O que foi solucionado ?</label>
+                        <textarea type="text" class="form-control bg-light border-0 py-3" id="taskStatus"></textarea>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="taskStatus" class="form-label fw-medium text-dark mb-2">Área de Intervenção</label>
+                        <select class="form-select bg-light border-0 py-3" id="taskStatus">
+                          <option selected>Área de Intervenção</option>
+                          <option>25%</option>
+                          <option>50%</option>
+                          <option>75%</option>
+                          <option>100%</option>
+                        </select>
+                      </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="taskStatus" class="form-label fw-medium text-dark mb-2">Tipo de Intervenção
+                        </label>
+                        <select class="form-select bg-light border-0 py-3" id="taskStatus">
+                          <option selected> Tipo de Intervenção</option>
+                          <option>25%</option>
+                          <option>50%</option>
+                          <option>75%</option>
+                          <option>100%</option>
+                        </select>
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="taskStatus" class="form-label fw-medium text-dark mb-2">Ocorrencia - Descricao da tarefa </label>
+                        <input type="text" class="form-control bg-light border-0 py-3" id="taskStatus">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="taskStatus" class="form-label fw-medium text-dark mb-2">Função</label>
+                        <input type="text" class="form-control bg-light border-0 py-3" id="taskStatus">
+                    </div>
+                </div>
+            </div>
+           
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Salvar folha de obra</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/scripts.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+
+</body>
+</html>
