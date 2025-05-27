@@ -36,6 +36,29 @@
             <i class="fas fa-th-large"></i>
             <span class="nav-text">Dashboard</span>
         </a>
+    
+
+        <div class=" mt-2">
+            <div class="accordion text-secondary" id="adminAccordion">
+              <div class="accordion-item border-0 ">
+                <h2 class="accordion-header" id="headingAdmin">
+                  <button class="accordion-button collapsed text-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAdmin" aria-expanded="false" aria-controls="collapseAdmin">
+                    <i class="far fa-user me-2"></i> Administração
+                  </button>
+                </h2>
+                <div id="collapseAdmin" class="accordion-collapse collapse" aria-labelledby="headingAdmin" data-bs-parent="#adminAccordion">
+                  <div class="accordion-body d-flex flex-column">
+                    <a href="administration/user.html" class="mb-3 text-secondary cursor-pointer text-decoration-none">Utilizadores</a>
+                    <a href="administration/employees.html" class="mb-3 text-secondary cursor-pointer text-decoration-none">Funcionarios</a>
+                    <a href="administration/roles.html" class="mb-3 text-secondary cursor-pointer text-decoration-none">Papeis</a>
+                    <a href="administration/direction.html" class="mb-3 text-secondary cursor-pointer text-decoration-none">Direção</a>
+                    <a href="administration/department.html" class="mb-3 text-secondary cursor-pointer text-decoration-none">Departamento</a>
+                    <a href="administration/section.html" class="mb-3 text-secondary cursor-pointer text-decoration-none">Secção</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         
         <a href="/projects.html" class="nav-item">
             <i class="far fa-folder"></i>
@@ -52,7 +75,7 @@
             <span class="nav-text">Comunicados</span>
         </a>
         
-        <a href="/settings.html" class="nav-item">
+        <a href="/reports.html" class="nav-item">
             <i class="fas fa-chart-line"></i>
             <span class="nav-text">Relatórios</span>
         </a>

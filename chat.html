@@ -36,6 +36,28 @@
             <i class="fas fa-th-large"></i>
             <span class="nav-text">Dashboard</span>
         </a>
+
+        <div class=" mt-2">
+            <div class="accordion text-secondary" id="adminAccordion">
+              <div class="accordion-item border-0 ">
+                <h2 class="accordion-header" id="headingAdmin">
+                  <button class="accordion-button collapsed text-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAdmin" aria-expanded="false" aria-controls="collapseAdmin">
+                    <i class="far fa-user me-2"></i> Administração
+                  </button>
+                </h2>
+                <div id="collapseAdmin" class="accordion-collapse collapse" aria-labelledby="headingAdmin" data-bs-parent="#adminAccordion">
+                  <div class="accordion-body d-flex flex-column">
+                    <a href="administration/user.html" class="mb-3 text-secondary cursor-pointer text-decoration-none">Utilizadores</a>
+                    <a href="administration/employees.html" class="mb-3 text-secondary cursor-pointer text-decoration-none">Funcionarios</a>
+                    <a href="administration/roles.html" class="mb-3 text-secondary cursor-pointer text-decoration-none">Papeis</a>
+                    <a href="administration/direction.html" class="mb-3 text-secondary cursor-pointer text-decoration-none">Direção</a>
+                    <a href="administration/department.html" class="mb-3 text-secondary cursor-pointer text-decoration-none">Departamento</a>
+                    <a href="administration/section.html" class="mb-3 text-secondary cursor-pointer text-decoration-none">Secção</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         
         <a href="/projects.html" class="nav-item ">
             <i class="far fa-folder"></i>
@@ -52,7 +74,7 @@
             <span class="nav-text">Comunicados</span>
         </a>
         
-        <a href="/settings.html" class="nav-item">
+        <a href="/reports.html" class="nav-item">
             <i class="fas fa-chart-line"></i>
             <span class="nav-text">Relatórios</span>
         </a>
@@ -142,59 +164,7 @@
                     
                     <div class="row">
                           
-                        <!-- Project Card 3 -->
-                       <!--  <div class="col-md-4">
-                            <div class="card project-card shadow">
-                                <div class="project-image project-bg-1">
-                                    <div class="priority-badge">Alta</div>
-                                    
-                                    <button class="btn text-white h-50" type="button" dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="fas fa-ellipsis-v"></i>
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        
-                                        <li><button class="dropdown-item" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightDetail" aria-controls="offcanvasWithBothOptions">
-                                            <i class="fas fa-info me-3 text-success"></i>
-                                            Detalhes</button></li>
-                                        <li><button class="dropdown-item" href="#">
-                                            <i class="fas fa-download me-3 text-warning"></i>
-                                            Download</button></li>
-                                        <li><button class="dropdown-item " data-bs-toggle="modal" data-bs-target="#exampleModal-folha ">
-                                            <i class="fas fa-file me-3 text-danger"></i>
-                                            Folha de Obra</button></li>
-                                        <li><button class="dropdown-item " data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                            <i class="fas fa-exchange me-3 text-primary"></i>
-                                            Mudar Estado </button></li>
-                                        <li><button class="dropdown-item " href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightEdit" aria-controls="offcanvasWithBothOptions">
-                                            <i class="fas fa-edit me-3 text-success"></i>
-                                            Editar 
-                                        </button></li>
-                                      </ul>
-                                </div>
-                                    <div class="card-body">
-                                    <h6>Sistema de RH</h6>
-                                    <div class="small text-muted mb-3">Austin Edmar - Janeiro, 2025</div>
-                                    
-                                    <div class="progress project-progress">
-                                        <div class="progress-bar bg-warning" style="width: 49%"></div>
-                                    </div>
-                                    
-                                    <div class="d-flex justify-content-between">
-                                        <div>
-                                            <span class="fw-bold">15</span> / <span class="text-muted">48</span> Total Progresso
-                                        </div>
-                                        <div class="fw-bold">49%</div>
-                                    </div>
-                                    
-                                    <div class="user-avatars mt-3">
-                                        <div class="user-avatar">A</div>
-                                        <div class="user-avatar">B</div>
-                                        <div class="user-avatar">C</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-                   
+                       
                         <table class="table">
                             <thead class=" table-bg">
                               <tr>
@@ -202,7 +172,7 @@
                                 <th scope="col">Titulo</th>
                                 <th scope="col">Data</th>
                                 <th scope="col">Estado</th>
-                                <th scope="col col-acoes">Ações</th>
+                                <th scope="col col-acoes">Acções</th>
                               </tr>
                             </thead>
                             <tbody class="text-secondary">
@@ -217,20 +187,13 @@
                                     </button>
                                     <ul class="dropdown-menu">
                                         
-                                        <li><button class="dropdown-item" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightDetail" aria-controls="offcanvasWithBothOptions">
+                                    
+                                        <li><button class="dropdown-item " data-bs-toggle="modal" data-bs-target="#exampleModal-detail ">
                                             <i class="fas fa-info me-3 text-success"></i>
                                             Detalhes</button></li>
-                                        <li><button class="dropdown-item" href="#">
-                                            <i class="fas fa-download me-3 text-warning"></i>
-                                            Download</button></li>
-                                        <li><button class="dropdown-item " data-bs-toggle="modal" data-bs-target="#exampleModal-folha ">
-                                            <i class="fas fa-file me-3 text-danger"></i>
-                                            Folha de Obra</button></li>
-                                        <li><button class="dropdown-item " data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                            <i class="fas fa-exchange me-3 text-primary"></i>
-                                            Mudar Estado </button></li>
+                                        
                                         <li><button class="dropdown-item " href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightEdit" aria-controls="offcanvasWithBothOptions">
-                                            <i class="fas fa-edit me-3 text-success"></i>
+                                            <i class="fas fa-edit me-3 text-warning"></i>
                                             Editar 
                                         </button></li>
                                       </ul>
@@ -247,20 +210,13 @@
                                     </button>
                                     <ul class="dropdown-menu">
                                         
-                                        <li><button class="dropdown-item" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightDetail" aria-controls="offcanvasWithBothOptions">
+                                    
+                                        <li><button class="dropdown-item " data-bs-toggle="modal" data-bs-target="#exampleModal-detail ">
                                             <i class="fas fa-info me-3 text-success"></i>
                                             Detalhes</button></li>
-                                        <li><button class="dropdown-item" href="#">
-                                            <i class="fas fa-download me-3 text-warning"></i>
-                                            Download</button></li>
-                                        <li><button class="dropdown-item " data-bs-toggle="modal" data-bs-target="#exampleModal-folha ">
-                                            <i class="fas fa-file me-3 text-danger"></i>
-                                            Folha de Obra</button></li>
-                                        <li><button class="dropdown-item " data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                            <i class="fas fa-exchange me-3 text-primary"></i>
-                                            Mudar Estado </button></li>
+                                        
                                         <li><button class="dropdown-item " href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightEdit" aria-controls="offcanvasWithBothOptions">
-                                            <i class="fas fa-edit me-3 text-success"></i>
+                                            <i class="fas fa-edit me-3 text-warning"></i>
                                             Editar 
                                         </button></li>
                                       </ul>
@@ -277,20 +233,12 @@
                                     </button>
                                     <ul class="dropdown-menu">
                                         
-                                        <li><button class="dropdown-item" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightDetail" aria-controls="offcanvasWithBothOptions">
+                                        <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal-detail ">
                                             <i class="fas fa-info me-3 text-success"></i>
                                             Detalhes</button></li>
-                                        <li><button class="dropdown-item" href="#">
-                                            <i class="fas fa-download me-3 text-warning"></i>
-                                            Download</button></li>
-                                        <li><button class="dropdown-item " data-bs-toggle="modal" data-bs-target="#exampleModal-folha ">
-                                            <i class="fas fa-file me-3 text-danger"></i>
-                                            Folha de Obra</button></li>
-                                        <li><button class="dropdown-item " data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                            <i class="fas fa-exchange me-3 text-primary"></i>
-                                            Mudar Estado </button></li>
+                                        
                                         <li><button class="dropdown-item " href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightEdit" aria-controls="offcanvasWithBothOptions">
-                                            <i class="fas fa-edit me-3 text-success"></i>
+                                            <i class="fas fa-edit me-3 text-warning"></i>
                                             Editar 
                                         </button></li>
                                       </ul>
@@ -475,125 +423,16 @@
                    </div>
                   </form>
                 </div>
-                <!-- offcanvas do detalhes -->
-             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightDetail" aria-labelledby="offcanvasRightLabel">
-                <div class="offcanvas-header">
-                  <h5 id="offcanvasRightLabel">Detalhes do tarefa</h5>
-                  <button type="button" class="btn-bg-close rounded-circle " data-bs-dismiss="offcanvas" aria-label="Close">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-                <div class="offcanvas-body">
-                  <form>
-                    <div class="mb-4">
-                        <label for="projectName" class="form-label fw-medium text-dark mb-2">Nome do tarefa</label>
-                        <input type="text" class="form-control bg-light border-0 py-3" id="projectName" value="Sistema de RH" required>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <label for="projectDescription" class="form-label fw-medium text-dark mb-2">Descrição</label>
-                        <textarea class="form-control bg-light border-0 py-3" id="projectDescription" rows="3">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</textarea>
-                    </div>
-                    <div class="mb-4">
-                      <label for="taskFile" class="form-label fw-medium text-dark mb-2">Arquivo</label>
-                      <input type="file" class="form-control bg-light border-0 py-3" id="taskFile" placeholder="Selecione o arquivo">
-                    </div>
+              
 
-                    <div class="mb-4">
-                      <label for="taskPriority" class="form-label fw-medium text-dark mb-2">Prioridade</label>
-                      <select class="form-select bg-light border-0 py-3" id="taskPriority">
-                        <option selected>Selecione a prioridade</option>
-                        <option>Alta</option>
-                        <option>Normal</option>
-                        <option>Baixa</option>
-                      </select>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="mb-4">
-                                <label for="taskStartDate" class="form-label fw-medium text-dark mb-2">Data de início</label>
-                                <input type="date" class="form-control bg-light border-0 py-3" id="taskStartDate" required>
-                            </div> 
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-4">
-                                <label for="taskDueDate" class="form-label fw-medium text-dark mb-2">Data final</label>
-                                <input type="date" class="form-control bg-light border-0 py-3" id="taskDueDate" required>
-                            </div> 
-                        </div>
-                    </div>
-                    <div class="mb-4">
-                        <label for="taskAssignees" class="form-label fw-medium text-dark mb-2">Alocar para</label>
-                        <select class="form-select bg-light border-0 py-3" id="taskAssignees" multiple>
-                          <option value="">Selecione os usuários</option>
-                          <option value="user1">Usuário 1</option>
-                          <option value="user2">Usuário 2</option>
-                          <option value="user3">Usuário 3</option>
-                        </select>
-                      </div>
-                    <div class="mb-4">
-                        <label for="taskAssignees" class="form-label fw-medium text-dark mb-2">Direção</label>
-                        <select class="form-select bg-light border-0 py-3" id="taskAssignees" multiple>
-                          <option value="">Selecione a direção</option>
-                          <option value="user1">Direção 1</option>
-                          <option value="user2">Direção 2</option>
-                          <option value="user3">Direção 3</option>
-                        </select>
-                      </div>
-                    <div class="mb-4">
-                        <label for="taskAssignees" class="form-label fw-medium text-dark mb-2">Departamento</label>
-                        <select class="form-select bg-light -0 py-3 border" id="taskAssignees" multiple>
-                          <option value="">Selecione o departamento</option>
-                          <option value="user1">Departamento 1</option>
-                          <option value="user2">Departamento 2</option>
-                          <option value="user3">Departamento 3</option>
-                          <option value="user3">Departamento 3</option>
-                          <option value="user3">Departamento 3</option>
-                          <option value="user3">Departamento 3</option>
-                        </select>
-                      </div>
-                    </div>
-                  </form>
-                </div>
+ 
 
-        <!-- Modal mudar estado -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Mudar Estado</h5>
-          <button type="button" class="btn-bg-close rounded-circle" data-bs-dismiss="modal" aria-label="Close">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="mb-3">
-              <label for="taskStatus" class="form-label fw-medium text-dark mb-2">Estado</label>
-              <select class="form-select bg-light border-0 py-3" id="taskStatus">
-                <option selected>Selecione o estado</option>
-                <option>25%</option>
-                <option>50%</option>
-                <option>75%</option>
-                <option>100%</option>
-              </select>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-         
-          <button type="button" class="btn btn-primary w-100">Mudar Estado</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- modal folha de obra -->
-  <div class="modal fade" id="exampleModal-folha" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- modal detalhes comunicados -->
+  <div class="modal fade" id="exampleModal-detail" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header btn-bg text-white">
-          <h5 class="modal-title" id="exampleModalLabel">Folha de obra</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Detalhes do Comunicado</h5>
           <button type="button" class="btn-bg-close text-white" data-bs-dismiss="modal" aria-label="Fechar">
             <i class="fas fa-times"></i>
           </button>
@@ -660,9 +499,7 @@
            
           </form>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Salvar folha de obra</button>
-        </div>
+       
       </div>
     </div>
   </div>
