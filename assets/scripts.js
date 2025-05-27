@@ -95,12 +95,18 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             document.querySelector('.logo-text').style.display = 'none';
             document.querySelector('.li-li').style.display = 'none';
+            document.querySelectorAll('.accordion-collapse').forEach(el => {
+                el.style.display = 'none';
+            });
         } else {
             document.querySelectorAll('.sidebar-item span').forEach(span => {
                 span.style.display = 'inline';
             });
             document.querySelector('.logo-text').style.display = 'block';
             document.querySelector('.li-li').style.display = 'block';
+            document.querySelectorAll('.accordion-collapse').forEach(el => {
+                el.style.display = '';
+            });
         }
     }
     mobileScreenSize.addListener(handleScreenSizeChange);
